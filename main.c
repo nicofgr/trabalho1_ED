@@ -8,25 +8,35 @@
 
 int main()
 {
-    ///TESTE PILHA ESTATICA
-    printf("--Pilha Estatica--\n");
-    PilhaE* p = cria_pilha_pe();
-    push_pe(p, 1);
-    push_pe(p, 2);
-    push_pe(p, 3);
-    pop_pe(p);
-    push_pe(p, 4);
-    desenha_pe(p);
+    int i = 0, j = 0;
+    int N = 0; //Nro de times;
+    int K = 0; //Nro de potes;
+    char teste[5][100];
 
-    ///TESTE FILA ESTATICA
-    printf("--Fila Estatica--\n");
-    FilaE* f = cria_fila_fe();
-    push_fe(f, 1);
-    push_fe(f, 2);
-    push_fe(f, 3);
-    pop_fe(f);
-    push_fe(f, 4);
-    desenha_fe(f);
+    scanf("%d %d", &N, &K);
+    PilhaE** potes = cria_pilha_pe(K);
+    for(i = 0; i < N; i++){
+        scanf("%s", teste[i]);
+        push_pe(potes[i%K], teste[i]);
+    }
+
+    for(i = 0; i < N; i++){
+        printf("Time %d: %s\n",i, potes[i%K]);
+    }
+
+    printf("\nPote 1:\n");
+    desenha_pe(potes[0]);
+    printf("\nPote 2:\n");
+    desenha_pe(potes[1]);
+
+    printf("\n--POTES--\n");
+    for(i = 0; i < 3 ; i++){
+        for(j = 0; j < K; j++)
+            printf(" | %s | ", pop_pe(potes[j]));
+        printf("\n");
+    }
+
+
 
     return 0;
 }

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1663777313 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\main.c
+1663781575 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"FuncoesAuxiliares.h"
@@ -9,7 +9,8 @@
 1663776715 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filaestatica.c
 	"FilaEstatica.h"
 
-1663776988 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhaestatica.h
+1663781175 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhaestatica.h
+	<string.h>
 
 1663777202 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\funcoesauxiliares.h
 	"PilhaEstatica.h"
@@ -19,15 +20,15 @@
 
 1663724038 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhadinamica.c
 
-1663776792 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhaestatica.c
+1663781487 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhaestatica.c
 	"PilhaEstatica.h"
 
-1663777452 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\funcoesauxiliares.c
+1663781648 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\funcoesauxiliares.c
 	"FuncoesAuxiliares.h"
 
 1663724591 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhadinamica.h
 
-1663776941 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filaestatica.h
+1663779412 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filaestatica.h
 
 1663724591 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filadinamica.h
 

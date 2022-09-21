@@ -5,7 +5,7 @@ void desenha_pe(PilhaE* p){
     int i = 0;
     if(!pilha_vazia_pe(p)){
         for(i = p->topo; i >= 0; i--)
-            printf(" %d\n", p->v[i]);
+            printf(" %s\n", p->v[i]);
         printf("\n");
         return;
     }
