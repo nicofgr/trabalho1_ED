@@ -17,10 +17,10 @@ void push_pe(PilhaE *p, char* x){
     }
 }
 
-char* pop_pe(PilhaE *p){
+char* pop_pe(PilhaE* p){
     if(p->topo >= 0){
         p->topo--;
-        return p->v[p->topo + 1];
+        return (p->v[p->topo + 1]);
     }
     return "n/a";
 }

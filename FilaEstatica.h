@@ -1,19 +1,23 @@
 #ifndef FILAESTATICA_H_INCLUDED
 #define FILAESTATICA_H_INCLUDED
 #define MAX 100
+#define MAXN 50
+#define MAXK 20
+
+#include<string.h>
 
 typedef struct FilaE{
-    int v[MAX];
+    char v[MAXN/2][2][MAX];
     int inicio;
     int fim;
     int tam;
 }FilaE;
 
 FilaE* cria_fila_fe();
-void push_fe(FilaE *p, int x);
-int pop_fe(FilaE *p);
-int fila_vazia_fe(FilaE *p);
-void libera_fila_fe(FilaE *p);
+void push_fe(FilaE *f, char* x, char* y);
+int pop_fe(FilaE *f);
+int fila_vazia_fe(FilaE *f);
+void libera_fila_fe(FilaE *f);
 
 
 #endif // FILAESTATICA_H_INCLUDED

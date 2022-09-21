@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 //#include "PilhaEstatica.h"
 //#include "PilhaDinamica.h"
 //#include "FilaEstatica.h"
@@ -13,6 +14,7 @@ int main()
     int K = 0; //Nro de potes;
     char teste[5][100];
 
+    ///LEITURA
     scanf("%d %d", &N, &K);
     PilhaE** potes = cria_pilha_pe(K);
     for(i = 0; i < N; i++){
@@ -20,23 +22,28 @@ int main()
         push_pe(potes[i%K], teste[i]);
     }
 
+    ///TESTES PARA VERIFICAR A PILHA
+    for(i = 0; i < K; i++){
+        printf("\nPote %d:\n", i);
+        desenha_pe(potes[i]);
+    }
+    desenha_potes(potes, K);
+
+    ///FILA
+    FilaE* fila = cria_fila_fe();
+    //Para sabermos em qual elemento o ultimo time foi colocado, fazemos N%K
     for(i = 0; i < N; i++){
-        printf("Time %d: %s\n",i, potes[i%K]);
+        char x[MAX];
+        char y[MAX];
+        strcpy(x, pop_pe(potes[i%K]));
+        i++;
+        strcpy(y, pop_pe(potes[i%K]));
+        printf("\nCopiado: %s e %s", x, y);
+        push_fe(fila,x,y);
+        printf("\nAQUI-2");
     }
 
-    printf("\nPote 1:\n");
-    desenha_pe(potes[0]);
-    printf("\nPote 2:\n");
-    desenha_pe(potes[1]);
-
-    printf("\n--POTES--\n");
-    for(i = 0; i < 3 ; i++){
-        for(j = 0; j < K; j++)
-            printf(" | %s | ", pop_pe(potes[j]));
-        printf("\n");
-    }
-
-
+    desenha_fila(fila);
 
     return 0;
 }
