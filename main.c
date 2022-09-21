@@ -22,14 +22,14 @@ int main()
         push_pe(potes[i%K], teste[i]);
     }
 
-    ///TESTES PARA VERIFICAR A PILHA
+    ///TESTES
     for(i = 0; i < K; i++){
         printf("\nPote %d:\n", i);
         desenha_pe(potes[i]);
     }
     desenha_potes(potes, K);
 
-    ///FILA
+    ///FILA INICIAL
     FilaE* fila = cria_fila_fe();
     //Para sabermos em qual elemento o ultimo time foi colocado, fazemos N%K
     for(i = 0; i < N; i++){
@@ -38,12 +38,19 @@ int main()
         strcpy(x, pop_pe(potes[i%K]));
         i++;
         strcpy(y, pop_pe(potes[i%K]));
-        printf("\nCopiado: %s e %s", x, y);
         push_fe(fila,x,y);
-        printf("\nAQUI-2");
     }
 
+    ///TESTES
     desenha_fila(fila);
+
+    printf("\nDia %d:\n", 1);
+    char** temp = (char**)malloc(2*sizeof(char*));
+    temp[0] = (char*)malloc(MAX*sizeof(char));
+    temp[1] = (char*)malloc(MAX*sizeof(char));
+    temp = pop_fe(fila);
+    //strcpy(temp, pop_fe(fila));
+    printf("Testando o temp: %s e %s", temp[0], temp[1]);
 
     return 0;
 }
