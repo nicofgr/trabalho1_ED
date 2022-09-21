@@ -14,12 +14,12 @@ void push_fe(FilaE* f, char* x, char* y){
     f->tam++;
     return;
 }
-char** pop_fe(FilaE *f){
-    char** x = f->v[f->inicio];
+void pop_fe(FilaE* f, char x[MAX], char y[MAX]){
+    strcpy(x, f->v[f->inicio][0]);
+    strcpy(y, f->v[f->inicio][1]);
     f->inicio = (f->inicio + 1)%MAX;
     f->tam--;
-    printf("\nTESTANDO: %s\n", x);
-    return x;
+    return;
 }
 int fila_vazia_fe(FilaE *f){
     if(f->tam == 0) return 1;

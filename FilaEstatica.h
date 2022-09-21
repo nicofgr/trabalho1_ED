@@ -15,7 +15,7 @@ typedef struct FilaE{
 
 FilaE* cria_fila_fe();
 void push_fe(FilaE *f, char* x, char* y);
-char** pop_fe(FilaE *f);
+void pop_fe(FilaE *f, char x[MAX], char y[MAX]);
 int fila_vazia_fe(FilaE *f);
 void libera_fila_fe(FilaE *f);
 
