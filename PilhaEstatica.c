@@ -1,5 +1,5 @@
 #include "PilhaEstatica.h"
-/**
+
 Pilha* cria_pilha(){
     Pilha* p = (Pilha*)malloc(sizeof(Pilha));
     p->topo = -1;
@@ -11,14 +11,6 @@ void push_pilha(Pilha *p, char* x){
         p->topo++;
         strcpy(p->v[p->topo], x);
     }
-}
-/**
-char* pop_pilha(Pilha* p){
-    if(p->topo >= 0){
-        p->topo--;
-        return (p->v[p->topo + 1]);
-    }
-    return "n/a";
 }
 void pop_pilha(Pilha *p, char* dest){
     if(p->topo >= 0){
@@ -40,4 +32,4 @@ void libera_pilha(Pilha *p){
 int tam_pilha(Pilha *p){
     return p->topo;
 }
-**/
+

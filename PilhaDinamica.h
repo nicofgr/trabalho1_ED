@@ -1,7 +1,8 @@
+#ifndef PILHAESTATICA_H_INCLUDED
 #ifndef PILHADINAMICA_H_INCLUDED
 #define PILHADINAMICA_H_INCLUDED
 
-#define MAX 100
+#define MAX 30
 #define MAXN 50
 #define MAXK 20
 
@@ -24,3 +25,4 @@ int pilha_vazia(Pilha *p);
 void libera_pilha(Pilha *p);
 
 #endif // PILHADINAMICA_H_INCLUDED
+#endif // PILHAESTATICA_H_INCLUDED
