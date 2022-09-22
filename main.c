@@ -5,8 +5,9 @@
 
 //#include "PilhaEstatica.h"
 #include "PilhaDinamica.h"
-//#include "FilaEstatica.h"
-#include "FilaDinamica.h"
+#include "FilaEstatica.h"
+//#include "FilaDinamica.h"
+
 //#include "FuncoesAuxiliares.h"
 
 #define MAXRAND 8
@@ -17,6 +18,10 @@ int main(){
     int N = 0; //Nro de times;
     int K = 0; //Nro de potes;
     char teste[MAX];
+
+    ///TESTES INCLUDE ATIVOS
+    //teste_pilha();
+    //teste_fila();
 
     ///LEITURA POTES
     scanf("%d %d", &N, &K);
@@ -121,12 +126,13 @@ int main(){
     ///PLACAR
     char nomes[MAX];
     pop_pilha(placar, nomes);
-    printf("\n  Campeao: %s", nomes);
+    printf("\n  Campeao: %s\n", nomes);
     pop_pilha(placar, nomes);
-    printf("\n     Vice: %s", nomes);
+    printf("     Vice: %s\n", nomes);
     for(i = 0; !pilha_vazia(placar); i++){
         pop_pilha(placar, nomes);
-        printf("\n %do lugar: %s",i+3, nomes);
+        if(i+3 < 10) printf(" ");
+        printf("%do lugar: %s\n",i+3, nomes);
     }
 
     ///LIMPA RESTANTE

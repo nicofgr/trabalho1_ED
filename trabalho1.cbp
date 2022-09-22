@@ -47,12 +47,12 @@
 		<Unit filename="FuncoesAuxiliares.h" />
 		<Unit filename="PilhaDinamica.c">
 			<Option compilerVar="CC" />
-			<Option compile="0" />
-			<Option link="0" />
 		</Unit>
 		<Unit filename="PilhaDinamica.h" />
 		<Unit filename="PilhaEstatica.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="PilhaEstatica.h" />
 		<Unit filename="main.c">

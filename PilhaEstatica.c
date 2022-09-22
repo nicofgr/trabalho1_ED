@@ -33,3 +33,7 @@ int tam_pilha(Pilha *p){
     return p->topo;
 }
 
+void teste_pilha(){
+    printf("--Usando pilha estatica--\n");
+}
+

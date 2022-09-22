@@ -1,19 +1,19 @@
 # depslib dependency file v1.0
-1663863398 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\main.c
+1663865121 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 	"PilhaDinamica.h"
-	"FilaDinamica.h"
-
-1663858545 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filadinamica.c
-	"FilaDinamica.h"
-
-1663862869 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filaestatica.c
 	"FilaEstatica.h"
 
-1663862991 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhaestatica.h
+1663864540 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filadinamica.c
+	"FilaDinamica.h"
+
+1663864540 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filaestatica.c
+	"FilaEstatica.h"
+
+1663864420 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhaestatica.h
 	<string.h>
 
 1663849067 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\funcoesauxiliares.h
@@ -22,21 +22,21 @@
 	"FilaEstatica.h"
 	"FilaDinamica.h"
 
-1663855022 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhadinamica.c
+1663864540 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhadinamica.c
 	"PilhaDinamica.h"
 
-1663862886 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhaestatica.c
+1663864539 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhaestatica.c
 	"PilhaEstatica.h"
 
 1663849075 source:g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\funcoesauxiliares.c
 	"FuncoesAuxiliares.h"
 
-1663862700 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhadinamica.h
+1663864420 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\pilhadinamica.h
 	<string.h>
 
-1663863012 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filaestatica.h
+1663864420 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filaestatica.h
 	<string.h>
 
-1663863579 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filadinamica.h
+1663864420 g:\meu drive\utfpr\segundo_periodo\cp42f_estrutura_de_dados\trabalho1\trabalho1\filadinamica.h
 	<string.h>
 

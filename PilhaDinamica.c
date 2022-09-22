@@ -35,3 +35,7 @@ void libera_pilha(Pilha *p){
     }
     free(p);
 }
+void teste_pilha(){
+    printf("+++Usando pilha dinamica+++\n");
+}
+

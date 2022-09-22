@@ -19,6 +19,7 @@ void pop_pilha(Pilha *p, char* dest);
 int tam_pilha(Pilha *p);
 int pilha_vazia(Pilha *p);
 void libera_pilha(Pilha *p);
+void teste_pilha();
 
 
 #endif // PILHAESTATICA_H_INCLUDED

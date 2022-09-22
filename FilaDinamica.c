@@ -40,3 +40,6 @@ void libera_fila(Fila *f){
     }
     free(f);
 }
+void teste_fila(){
+    printf("+++Usando fila  dinamica+++\n");
+}

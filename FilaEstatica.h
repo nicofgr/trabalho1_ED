@@ -21,7 +21,7 @@ void pop_fila(Fila *f, char* dest);
 int tam_fila(Fila *f);
 int fila_vazia(Fila *f);
 void libera_fila(Fila *f);
-
+void teste_fila();
 
 #endif // FILAESTATICA_H_INCLUDED
 #endif // FILADINAMICA_H_INCLUDED

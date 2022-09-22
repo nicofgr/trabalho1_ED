@@ -28,3 +28,7 @@ void libera_fila(Fila *f){
 int tam_fila(Fila *f){
     return f->tam;
 }
+
+void teste_fila(){
+    printf("---Usando fila  estatica---\n");
+}
