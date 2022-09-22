@@ -16,8 +16,8 @@ void desenha_pe(PilhaE* p){
 void desenha_fe(FilaE* f){
     int i = 0;
     if(!fila_vazia_fe(f)){
-        for(i = f->fim-1; i != f->inicio-1; i--)
-            printf(" %d\n", f->v[(f->inicio + i)%MAX]);
+        for(i = f->inicio; i != f->fim; i = (i+1)%(MAXN/2))
+            printf(" %s\n", f->v[i]);
         printf("\n");
         return;
     }
@@ -44,11 +44,11 @@ void desenha_potes(PilhaE** potes, int K){
     }
 }
 
-void desenha_fila(FilaE* fila){
+void desenha_fila(FilaE** fila){
     int i = 0;
     printf("\n--FILA--\n");
-    for(i = 0; i < fila->tam; i++){
-        printf("  %s x %s  ", fila->v[i][0],fila->v[i][1]);
+    for(i = 0; i < fila[0]->tam; i++){
+        printf("  %s x %s  ", fila[0]->v[i],fila[1]->v[i]);
         printf("\n");
     }
 }

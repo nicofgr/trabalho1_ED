@@ -7,17 +7,21 @@
 #include<string.h>
 
 typedef struct FilaE{
-    char v[MAXN/2][2][MAX];
+    //char v[MAXN/2][2][MAX];
+    char v[MAXN/2][MAX];
     int inicio;
     int fim;
     int tam;
 }FilaE;
 
 FilaE* cria_fila_fe();
-void push_fe(FilaE *f, char* x, char* y);
-void pop_fe(FilaE *f, char x[MAX], char y[MAX]);
+//void push_fe(FilaE *f, char* x, char* y);
+void push_fe(FilaE *f, char* x);
+//void pop_fe(FilaE *f, char x[MAX], char y[MAX]);
+char* pop_fe(FilaE *f);
 int fila_vazia_fe(FilaE *f);
 void libera_fila_fe(FilaE *f);
+void libera_fila(FilaE *f);
 
 
 #endif // FILAESTATICA_H_INCLUDED
