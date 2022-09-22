@@ -13,7 +13,7 @@ int main(){
     int i = 0, j = 0;
     int N = 0; //Nro de times;
     int K = 0; //Nro de potes;
-    char teste[5][100];
+    char teste[MAX];
 
     ///LEITURA POTES
     scanf("%d %d", &N, &K);
@@ -22,8 +22,8 @@ int main(){
         potes[i] = cria_pilha_pe();
     }
     for(i = 0; i < N; i++){
-        scanf("%s", teste[i]);
-        push_pe(potes[i%K], teste[i]);
+        scanf("%s", teste);
+        push_pe(potes[i%K], teste);
     }
 
     ///TESTES
