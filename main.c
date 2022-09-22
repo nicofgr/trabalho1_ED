@@ -2,11 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-//#include "PilhaEstatica.h"
+
+#include "PilhaEstatica.h"
 //#include "PilhaDinamica.h"
-//#include "FilaEstatica.h"
+#include "FilaEstatica.h"
 //#include "FilaDinamica.h"
-#include "FuncoesAuxiliares.h"
+//#include "FuncoesAuxiliares.h"
+
+#define MAXRAND 8
 
 int main(){
     srand(time(NULL));
@@ -26,13 +29,6 @@ int main(){
         push_pe(potes[i%K], teste);
     }
 
-    ///TESTES
-    for(i = 0; i < K; i++){
-        printf("\nPote %d:\n", i);
-        desenha_pe(potes[i]);
-    }
-    desenha_potes(potes, K);
-
     ///FILA INICIAL
     FilaE** fila = (FilaE**)malloc(2*sizeof(FilaE*));
     fila[0] = cria_fila_fe();
@@ -46,31 +42,55 @@ int main(){
         push_fe(fila[0],x);
         push_fe(fila[1],y);
     }
+
     ///LIMPEZA POTES
     for(i = 0; i < K; i++){
         libera_pilha(potes[i]);
     }
     free(potes);
 
-    ///TESTES
-    //desenha_fe(fila[0]);
-    //desenha_fe(fila[1]);
-    desenha_fila(fila);
+    ///DESENHA FILA INICIAL
+    int maior = 0;
+    for(i = 0; i < fila[0]->tam; i++){
+        for(j = 0; j < 2; j++){
+            char temp[MAX];
+            int tam;
+            strcpy(temp, pop_fe(fila[j]));
+            push_fe(fila[j],temp);
+            tam = strlen(temp);
+            if(tam > maior) maior = tam;
+        }
+    }
+    printf("\nFila inicial:\n");
+    for(i = 0; i < fila[0]->tam; i++){
+        char prim[MAX];
+        char segn[MAX];
+        int tam;
+        strcpy(prim, pop_fe(fila[0]));
+        strcpy(segn, pop_fe(fila[1]));
+        tam = strlen(prim);
+        for(j = 0; j < (maior-tam); j++) printf(" ");
+        printf("     %s x %s \n", prim, segn);
+        push_fe(fila[0],prim);
+        push_fe(fila[1],segn);
+    }
 
     ///JOGOS
     PilhaE* placar = cria_pilha_pe();
-    for(j = 0; fila[0]->tam > 1; j++){
-        printf("\nDia %d:", j+1);
+    for(j = 0; fila[0]->tam >= 1; j++){
+        if(fila[0]->tam == 1) printf("\nGrande final: \n");
+        else printf("\nDia %d:\n", j+1);
         char venc[2][MAX];
         for(i = 0; i < 2; i++){
             char cmptdr[2][MAX];
-            int val1;
-            int val2;
-            val1 = rand()%7;
-            do{ val2 = rand()%7; }while(val1 == val2);
+            int val1 = rand()%MAXRAND;
+            int val2 = rand()%MAXRAND;
+            while(val1 == val2) val2 = rand()%MAXRAND;;
             strcpy(cmptdr[0], pop_fe(fila[0]));
             strcpy(cmptdr[1], pop_fe(fila[1]));
-            printf("\n\t%s %d x %d %s", cmptdr[0], val1, val2, cmptdr[1]);
+            int tam = strlen(cmptdr[0]);
+            for(j = 0; j < (maior-tam); j++) printf(" ");
+            printf("     %s %d x %d %s\n", cmptdr[0], val1, val2, cmptdr[1]);
             if(val1 > val2){
                 strcpy(venc[i], cmptdr[0]);
                 push_pe(placar, cmptdr[1]);
@@ -78,27 +98,17 @@ int main(){
                 strcpy(venc[i], cmptdr[1]);
                 push_pe(placar, cmptdr[0]);
             }
+            if(fila[0]->tam == 0 && i == 0){
+                fila[0]->tam = -1;
+                break;
+            }
         }
-        printf("\n");
+        if(fila[0]->tam == -1){
+            push_pe(placar, venc[0]);
+            break;
+        }
         push_fe(fila[0], venc[0]);
         push_fe(fila[1], venc[1]);
-    }
-
-    printf("\nGrande final: ");
-    char cmptdr[2][MAX];
-    int val1;
-    int val2;
-    val1 = rand()%7;
-    do{ val2 = rand()%7; }while(val1 == val2);
-    strcpy(cmptdr[0], pop_fe(fila[0]));
-    strcpy(cmptdr[1], pop_fe(fila[1]));
-    printf("\n\t%s %d x %d %s", cmptdr[0], val1, val2, cmptdr[1]);
-    if(val1 > val2){
-        push_pe(placar, cmptdr[1]);
-        push_pe(placar, cmptdr[0]);
-    }else{
-        push_pe(placar, cmptdr[0]);
-        push_pe(placar, cmptdr[1]);
     }
 
     ///LIMPA FILA
@@ -107,10 +117,10 @@ int main(){
     libera_fila(fila);
 
     ///PLACAR
-    printf("\n\n Campeao: %s", pop_pe(placar));
-    printf("\n    Vice: %s", pop_pe(placar));
+    printf("\n  Campeao: %s", pop_pe(placar));
+    printf("\n     Vice: %s", pop_pe(placar));
     for(i = 0; placar->topo >= 0; i++){
-        printf("\n%do lugar: %s",i+3, pop_pe(placar));
+        printf("\n %do lugar: %s",i+3, pop_pe(placar));
     }
 
     ///LIMPA RESTANTE

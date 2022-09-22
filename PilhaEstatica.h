@@ -11,7 +11,6 @@ typedef struct PilhaE{
     int topo;
 }PilhaE;
 
-//PilhaE** cria_pilha_pe(int K);
 PilhaE* cria_pilha_pe();
 void push_pe(PilhaE *p, char* x);
 char* pop_pe(PilhaE *p);
