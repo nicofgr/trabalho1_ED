@@ -1,6 +1,6 @@
 #include "FuncoesAuxiliares.h"
 
-
+/**
 void desenha_pe(PilhaE* p){
     int i = 0;
     if(!pilha_vazia_pe(p)){
@@ -52,3 +52,4 @@ void desenha_fila(FilaE** fila){
         printf("\n");
     }
 }
+**/

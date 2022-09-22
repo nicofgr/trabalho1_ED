@@ -5,16 +5,19 @@
 #define MAXK 20
 
 #include<string.h>
-
-typedef struct PilhaE{
+/**
+typedef struct Pilha{
     char v[MAXN][MAX];
     int topo;
-}PilhaE;
+}Pilha;
 
-PilhaE* cria_pilha_pe();
-void push_pe(PilhaE *p, char* x);
-char* pop_pe(PilhaE *p);
-int pilha_vazia_pe(PilhaE *p);
-void libera_pilha(PilhaE *p);
+Pilha* cria_pilha();
+void push_pilha(Pilha *p, char* x);
+//char* pop_pilha(Pilha *p);
+void pop_pilha(Pilha *p, char* dest);
+int tam_pilha(Pilha *p);
+int pilha_vazia(Pilha *p);
+void libera_pilha(Pilha *p);
+**/
 
 #endif // PILHAESTATICA_H_INCLUDED

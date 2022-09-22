@@ -5,19 +5,20 @@
 #define MAXK 20
 
 #include<string.h>
-
-typedef struct FilaE{
+/**
+typedef struct Fila{
     char v[MAXN/2][MAX];
     int inicio;
     int fim;
     int tam;
-}FilaE;
+}Fila;
 
-FilaE* cria_fila_fe();
-void push_fe(FilaE *f, char* x);
-char* pop_fe(FilaE *f);
-int fila_vazia_fe(FilaE *f);
-void libera_fila(FilaE *f);
-
+Fila* cria_fila();
+void push_fila(Fila *f, char* x);
+char* pop_fila(Fila *f);
+int tam_fila(Fila *f);
+int fila_vazia(Fila *f);
+void libera_fila(Fila *f);
+**/
 
 #endif // FILAESTATICA_H_INCLUDED

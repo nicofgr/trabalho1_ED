@@ -1,32 +1,43 @@
 #include "PilhaEstatica.h"
-
-PilhaE* cria_pilha_pe(){
-    PilhaE* p = (PilhaE*)malloc(sizeof(PilhaE));
+/**
+Pilha* cria_pilha(){
+    Pilha* p = (Pilha*)malloc(sizeof(Pilha));
     p->topo = -1;
     return p;
 }
 
-void push_pe(PilhaE *p, char* x){
+void push_pilha(Pilha *p, char* x){
     if(p->topo < (MAXN-2)){
         p->topo++;
         strcpy(p->v[p->topo], x);
     }
 }
-
-char* pop_pe(PilhaE* p){
+/**
+char* pop_pilha(Pilha* p){
     if(p->topo >= 0){
         p->topo--;
         return (p->v[p->topo + 1]);
     }
     return "n/a";
 }
-
-int pilha_vazia_pe(PilhaE *p){
+void pop_pilha(Pilha *p, char* dest){
+    if(p->topo >= 0){
+        strcpy(dest, p->v[p->topo]);
+        p->topo--;
+        return;
+    }
+    return;
+}
+int pilha_vazia(Pilha *p){
     if(p->topo == -1) return 1;
     return 0;
 }
 
-void libera_pilha(PilhaE *p){
+void libera_pilha(Pilha *p){
     free(p);
 }
 
+int tam_pilha(Pilha *p){
+    return p->topo;
+}
+**/
