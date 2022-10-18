@@ -1,4 +1,3 @@
-#ifndef FILADINAMICA_H_INCLUDED
 #ifndef FILAESTATICA_H_INCLUDED
 #define FILAESTATICA_H_INCLUDED
 
@@ -24,4 +23,3 @@ void libera_fila(Fila *f);
 void teste_fila();
 
 #endif // FILAESTATICA_H_INCLUDED
-#endif // FILADINAMICA_H_INCLUDED

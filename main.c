@@ -8,8 +8,6 @@
 #include "FilaEstatica.h"
 //#include "FilaDinamica.h"
 
-//#include "FuncoesAuxiliares.h"
-
 #define MAXRAND 8
 
 int main(){
@@ -20,8 +18,8 @@ int main(){
     char teste[MAX];
 
     ///TESTES INCLUDE ATIVOS
-    //teste_pilha();
-    //teste_fila();
+    teste_pilha();
+    teste_fila();
 
     ///LEITURA POTES
     scanf("%d %d", &N, &K);
