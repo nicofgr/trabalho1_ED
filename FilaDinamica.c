@@ -38,7 +38,7 @@ int fila_vazia(Fila* f){
 }
 void libera_fila(Fila* f){
     while(!fila_vazia(f)){
-        pop_fila(f, NULL);
+        pop_fila(f, NULL, NULL);
     }
     free(f);
 }
