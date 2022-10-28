@@ -29,3 +29,5 @@ pdfd: pilhaDinamica.o filaDinamica.o main.c
 clean:
 	rm *.o pefe pefd pdfe pdfd
 
+cleano:
+	rm *.o

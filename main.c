@@ -5,8 +5,8 @@
 
 //#include "PilhaEstatica.h"
 #include "PilhaDinamica.h"
-#include "FilaEstatica.h"
-//#include "FilaDinamica.h"
+//#include "FilaEstatica.h"
+#include "FilaDinamica.h"
 
 #define MAXRAND 8
 
@@ -33,17 +33,14 @@ int main(){
     }
 
     ///FILA INICIAL
-    Fila** fila = (Fila**)malloc(2*sizeof(Fila*));
-    fila[0] = cria_fila();
-    fila[1] = cria_fila();
+    Fila* fila = cria_fila();;
     for(i = 0; i < N; i++){
-        char x[MAX];
-        char y[MAX];
-        pop_pilha(potes[i%K], x);
+        char cptdr1[MAX];
+        char cptdr2[MAX];
+        pop_pilha(potes[i%K], cptdr1);
         i++;
-        pop_pilha(potes[i%K], y);
-        push_fila(fila[0],x);
-        push_fila(fila[1],y);
+        pop_pilha(potes[i%K], cptdr2);
+        push_fila(fila, cptdr1, cptdr2);
     }
 
     ///LIMPEZA POTES
@@ -54,35 +51,36 @@ int main(){
 
     ///DESENHA FILA INICIAL
     int maior = 0;
-    for(i = 0; i < tam_fila(fila[0]); i++){
+    for(i = 0; i < tam_fila(fila); i++){
         for(j = 0; j < 2; j++){
-            char temp[MAX];
-            int tam;
-            pop_fila(fila[j], temp);
-            push_fila(fila[j],temp);
-            tam = strlen(temp);
-            if(tam > maior) maior = tam;
+            char temp1[MAX];
+            char temp2[MAX];
+            int tam1, tam2;
+            pop_fila(fila, temp1, temp2);
+            push_fila(fila,temp1, temp2);
+            tam1 = strlen(temp1);
+            tam2 = strlen(temp1);
+            if(tam1 > maior) maior = tam1;
+            if(tam2 > maior) maior = tam2;
         }
     }
 
     printf("\nFila inicial:\n");
-    for(i = 0; i < tam_fila(fila[0]); i++){
+    for(i = 0; i < tam_fila(fila); i++){
         char prim[MAX];
         char segn[MAX];
         int tam;
-        pop_fila(fila[0], prim);
-        pop_fila(fila[1], segn);
+        pop_fila(fila, prim, segn);
         tam = strlen(prim);
         for(j = 0; j < (maior-tam); j++) printf(" ");
         printf("     %s x %s \n", prim, segn);
-        push_fila(fila[0],prim);
-        push_fila(fila[1],segn);
+        push_fila(fila,prim, segn);
     }
 
     ///JOGOS
     Pilha* placar = cria_pilha();
-    for(j = 0; tam_fila(fila[0]) >= 1; j++){
-        if(tam_fila(fila[0]) == 1) printf("\nGrande final: \n");
+    for(j = 0; tam_fila(fila) >= 1; j++){
+        if(tam_fila(fila) == 1) printf("\nGrande final: \n");
         else printf("\nDia %d:\n", j+1);
         char venc[2][MAX];
         int ultimaPartida = 0;
@@ -91,8 +89,7 @@ int main(){
             int val1 = rand()%MAXRAND;
             int val2 = rand()%MAXRAND;
             while(val1 == val2) val2 = rand()%MAXRAND;;
-            pop_fila(fila[0], cmptdr[0]);
-            pop_fila(fila[1], cmptdr[1]);
+            pop_fila(fila, cmptdr[0], cmptdr[1]);
             int tam = strlen(cmptdr[0]);
             for(j = 0; j < (maior-tam); j++) printf(" ");
             printf("     %s %d x %d %s\n", cmptdr[0], val1, val2, cmptdr[1]);
@@ -103,7 +100,7 @@ int main(){
                 strcpy(venc[i], cmptdr[1]);
                 push_pilha(placar, cmptdr[0]);
             }
-            if(tam_fila(fila[0]) == 0 && i == 0){
+            if(tam_fila(fila) == 0 && i == 0){
                 ultimaPartida = 1;
                 break;
             }
@@ -112,14 +109,12 @@ int main(){
             push_pilha(placar, venc[0]);
             break;
         }
-        push_fila(fila[0], venc[0]);
-        push_fila(fila[1], venc[1]);
+        push_fila(fila, venc[0], venc[1]);
     }
 
     ///LIMPA FILA
-    libera_fila(fila[0]);
-    libera_fila(fila[1]);
-    free(fila);
+    libera_fila(fila);
+    //free(fila);
 
     ///PLACAR
     char nomes[MAX];
@@ -135,6 +130,8 @@ int main(){
 
     ///LIMPA RESTANTE
     libera_pilha(placar);
+
+    //getch();
 
     return 0;
 }

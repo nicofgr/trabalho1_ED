@@ -24,5 +24,4 @@ int pilha_vazia(Pilha *p);
 void libera_pilha(Pilha *p);
 void teste_pilha();
 
-
 #endif // PILHADINAMICA_H_INCLUDED

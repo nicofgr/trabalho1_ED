@@ -7,14 +7,16 @@ Fila* cria_fila(){
     f->tam = 0;
     return f;
 }
-void push_fila(Fila* f, char* x){
-    strcpy(f->v[f->fim], x);
+void push_fila(Fila* f, char* cptdr1, char* cptdr2){
+    strcpy(f->v[f->fim][0], cptdr1);
+    strcpy(f->v[f->fim][1], cptdr2);
     f->fim = (f->fim + 1)%(MAXN/2);
     f->tam++;
     return;
 }
-void pop_fila(Fila* f, char* dest){
-    strcpy(dest, f->v[f->inicio]);
+void pop_fila(Fila* f, char* dest1, char* dest2){
+    strcpy(dest1, f->v[f->inicio][0]);
+    strcpy(dest2, f->v[f->inicio][1]);
     f->inicio = (f->inicio + 1)%(MAXN/2);
     f->tam--;
 }
