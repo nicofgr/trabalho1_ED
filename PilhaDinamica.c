@@ -11,12 +11,18 @@ void push_pilha(Pilha *p, char* x){
     novo->prox = p->topo;
     p->topo = novo;
 }
-void pop_pilha(Pilha *p, char* dest){
+
+/*Salva a string em um auxiliar dinamico e retorna o endereco*/
+char* pop_pilha(Pilha *p){
     Nodo* aux = p->topo;
+    char* temp = malloc(MAX*sizeof(char));
     p->topo = p->topo->prox;
-    strcpy(dest, aux->info);
+    strcpy(temp, aux->info);
     free(aux);
+    return temp;
 }
+
+/*Conta os nodos ate o nulo*/
 int tam_pilha(Pilha *p){
     int tam = 0;
     Nodo* aux = p->topo;
@@ -27,6 +33,7 @@ int pilha_vazia(Pilha *p){
     if(!tam_pilha(p)) return 1;
     return 0;
 }
+/*Libera cada nodo alocado*/
 void libera_pilha(Pilha *p){
     while(p->topo != NULL){
         Nodo* aux = p->topo;
@@ -35,6 +42,7 @@ void libera_pilha(Pilha *p){
     }
     free(p);
 }
+/*Funcao para testes pode ser habilitado no main*/
 void teste_pilha(){
     printf("+++Usando pilha dinamica+++\n");
 }

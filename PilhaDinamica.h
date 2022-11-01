@@ -1,7 +1,7 @@
 #ifndef PILHADINAMICA_H_INCLUDED
 #define PILHADINAMICA_H_INCLUDED
 
-#define MAX 30
+#define MAX 31
 #define MAXN 50
 #define MAXK 20
 
@@ -18,7 +18,7 @@ typedef struct Pilha{
 
 Pilha* cria_pilha();
 void push_pilha(Pilha *p, char* x);
-void pop_pilha(Pilha *p, char* dest);
+char* pop_pilha(Pilha *p);
 int tam_pilha(Pilha *p);
 int pilha_vazia(Pilha *p);
 void libera_pilha(Pilha *p);

@@ -12,14 +12,19 @@ void push_pilha(Pilha *p, char* x){
         strcpy(p->v[p->topo], x);
     }
 }
-void pop_pilha(Pilha *p, char* dest){
+
+/*Aloca em um auxiliar e retorna o ponteiro da memoria alocada
+  ATENCAO: Ponteiro deve ser liberado no main*/
+char* pop_pilha(Pilha *p){
     if(p->topo >= 0){
-        strcpy(dest, p->v[p->topo]);
+        char* aux = malloc(MAX*sizeof(char));
+        strcpy(aux, p->v[p->topo]);
         p->topo--;
-        return;
+        return aux;
     }
-    return;
+    return NULL;
 }
+
 int pilha_vazia(Pilha *p){
     if(p->topo == -1) return 1;
     return 0;
@@ -33,6 +38,7 @@ int tam_pilha(Pilha *p){
     return p->topo;
 }
 
+//Pode ser usado no main para verificacao no terminal
 void teste_pilha(){
     printf("--Usando pilha estatica--\n");
 }

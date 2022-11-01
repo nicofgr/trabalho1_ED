@@ -1,7 +1,7 @@
 #ifndef FILAESTATICA_H_INCLUDED
 #define FILAESTATICA_H_INCLUDED
 
-#define MAX 30
+#define MAX 31
 #define MAXN 50
 #define MAXK 20
 
